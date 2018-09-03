@@ -1,11 +1,17 @@
-import React, { Component } from "react";
+import React from "react";
 import TextField from "@material-ui/core/TextField";
 
-class averageCostPerHour extends React.Component {
+class InputNumberOfAttendees extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { numMembers: 3 };
+    this.state = { numAttendees: 4 };
   }
+
+  handleChange = name => event => {
+    this.setState({
+      [name]: event.target.value
+    });
+  };
 
   render() {
     return (
@@ -14,15 +20,16 @@ class averageCostPerHour extends React.Component {
           id="numAttendees"
           label="Number of attendees"
           type="number"
-          value={this.state.numMembers}
+          value={this.state.numAttendees}
           InputLabelProps={{
             shrink: true
           }}
           margin="normal"
+          onchange={this.handleChange("numAttendees")}
         />
       </div>
     );
   }
 }
 
-export default averageCostPerHour;
+export default InputNumberOfAttendees;
