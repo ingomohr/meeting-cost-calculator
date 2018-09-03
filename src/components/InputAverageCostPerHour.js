@@ -7,6 +7,12 @@ class InputAverageCostPerHour extends React.Component {
     this.state = { averageCostPerHour: 50 };
   }
 
+  handleChange = name => event => {
+    this.setState({
+      [name]: event.target.value
+    });
+  };
+
   render() {
     return (
       <div>
@@ -19,6 +25,7 @@ class InputAverageCostPerHour extends React.Component {
             shrink: true
           }}
           margin="normal"
+          onChange={this.handleChange("averageCostPerHour")}
         />
       </div>
     );

@@ -4,7 +4,7 @@ import TextField from "@material-ui/core/TextField";
 class InputNumberOfAttendees extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { numAttendees: 4 };
+    this.state = { numAttendees: 5 };
   }
 
   handleChange = name => event => {
@@ -25,7 +25,7 @@ class InputNumberOfAttendees extends React.Component {
             shrink: true
           }}
           margin="normal"
-          onchange={this.handleChange("numAttendees")}
+          onChange={this.handleChange("numAttendees")}
         />
       </div>
     );

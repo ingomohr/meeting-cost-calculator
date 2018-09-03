@@ -7,6 +7,12 @@ class InputDurationOfMeeting extends React.Component {
     this.state = { durationInMin: 30 };
   }
 
+  handleChange = name => event => {
+    this.setState({
+      [name]: event.target.value
+    });
+  };
+
   render() {
     return (
       <div>
@@ -19,6 +25,7 @@ class InputDurationOfMeeting extends React.Component {
             shrink: true
           }}
           margin="normal"
+          onChange={this.handleChange("durationInMin")}
         />
       </div>
     );
