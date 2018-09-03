@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import NumberOfMembers from "./components/NumberOfMembers";
+import InputNumberOfAttendees from "./components/InputNumberOfAttendees";
+import InputDurationOfMeeting from "./components/InputDurationOfMeeting";
+import InputAverageCostPerHour from "./components/InputAverageCostPerHour";
 
 class App extends Component {
   render() {
@@ -9,12 +11,14 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className="App-title">Meeting-Cost Calculator</h1>
         </header>
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+          Want to know what it takes to hold a meeting?
         </p>
-        <NumberOfMembers />
+        <InputNumberOfAttendees />
+        <InputDurationOfMeeting />
+        <InputAverageCostPerHour />
       </div>
     );
   }
