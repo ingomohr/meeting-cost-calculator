@@ -19,7 +19,6 @@ class OutputActualCostsForMeeting extends React.Component {
             shrink: true
           }}
           margin="normal"
-          readOnly="true"
         />
       </div>
     );
