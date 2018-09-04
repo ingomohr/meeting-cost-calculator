@@ -4,7 +4,8 @@ import "./App.css";
 import InputNumberOfAttendees from "./components/InputNumberOfAttendees";
 import InputDurationOfMeeting from "./components/InputDurationOfMeeting";
 import InputAverageCostPerHour from "./components/InputAverageCostPerHour";
-
+import OutputActualCostsForMeeting from "./components/OutputActualCostsForMeeting";
+import Divider from "@material-ui/core/Divider";
 class App extends Component {
   render() {
     return (
@@ -19,6 +20,8 @@ class App extends Component {
         <InputNumberOfAttendees />
         <InputDurationOfMeeting />
         <InputAverageCostPerHour />
+        <Divider />
+        <OutputActualCostsForMeeting />
       </div>
     );
   }
