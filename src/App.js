@@ -7,6 +7,17 @@ import InputAverageCostPerHour from "./components/InputAverageCostPerHour";
 import OutputActualCostsForMeeting from "./components/OutputActualCostsForMeeting";
 import Divider from "@material-ui/core/Divider";
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { numAttendees: 7 };
+  }
+
+  onChangeNumAttendees = pNumAttendees => {
+    this.setState({
+      numAttendees: pNumAttendees
+    });
+  };
+
   render() {
     return (
       <div className="App">
@@ -17,11 +28,17 @@ class App extends Component {
         <p className="App-intro">
           Want to know what it takes to hold a meeting?
         </p>
-        <InputNumberOfAttendees />
+
+        {}
+
+        <InputNumberOfAttendees
+          numAttendees={this.state.numAttendees}
+          onChange={this.onChangeNumAttendees}
+        />
         <InputDurationOfMeeting />
         <InputAverageCostPerHour />
         <Divider />
-        <OutputActualCostsForMeeting />
+        <OutputActualCostsForMeeting numAttendees={this.state.numAttendees} />
       </div>
     );
   }

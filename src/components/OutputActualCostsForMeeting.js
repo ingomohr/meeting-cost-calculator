@@ -2,9 +2,8 @@ import React from "react";
 import TextField from "@material-ui/core/TextField";
 
 class OutputActualCostsForMeeting extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { actualCost: props.actualCost };
+  calcActualCost() {
+    return this.props.numAttendees * 10;
   }
 
   render() {
@@ -14,7 +13,7 @@ class OutputActualCostsForMeeting extends React.Component {
           id="actualCosts"
           label="Actual costs ($)"
           type="number"
-          value={this.state.actualCost}
+          value={this.calcActualCost()}
           InputLabelProps={{
             shrink: true
           }}
