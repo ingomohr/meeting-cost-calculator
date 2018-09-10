@@ -20,8 +20,9 @@ class App extends Component {
     console.log("#Duration: " + duration + "min");
     console.log("#AverageCost: " + avrgCost + "$");
 
-    const val =
-      pNumAttendees * Math.round(pDurationInMinutes / 60) * pAverageCostPerHour;
+    const rawVal =
+      pNumAttendees * (pDurationInMinutes / 60) * pAverageCostPerHour;
+    const val = parseFloat(rawVal).toFixed(2);
     console.log("Costs for meeting: " + val);
     return val;
   };
