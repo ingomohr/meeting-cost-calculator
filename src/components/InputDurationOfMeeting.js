@@ -2,30 +2,26 @@ import React from "react";
 import TextField from "@material-ui/core/TextField";
 
 class InputDurationOfMeeting extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { durationInMin: 30 };
-  }
-
+ 
   handleChange = name => event => {
-    this.setState({
-      [name]: event.target.value
-    });
+    if (this.props.onChange) {
+      this.props.onChange(event.target.value);
+    }
   };
-
+ 
   render() {
     return (
       <div>
         <TextField
-          id="durationOfMeeting"
+          id="durationInMinutes"
           label="Duration in minutes"
           type="number"
-          value={this.state.durationInMin}
+          value={this.props.durationInMinutes}
           InputLabelProps={{
             shrink: true
           }}
           margin="normal"
-          onChange={this.handleChange("durationInMin")}
+          onChange={this.handleChange("durationInMinutes")}
         />
       </div>
     );
