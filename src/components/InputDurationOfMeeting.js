@@ -14,7 +14,7 @@ class InputDurationOfMeeting extends React.Component {
       <div>
         <TextField
           id="durationInMinutes"
-          label="Duration in minutes"
+          label="Duration (minutes)"
           type="number"
           value={this.props.durationInMinutes}
           InputLabelProps={{
