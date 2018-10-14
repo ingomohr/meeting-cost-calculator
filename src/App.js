@@ -6,6 +6,7 @@ import InputDurationOfMeeting from "./components/InputDurationOfMeeting";
 import InputAverageCostPerHour from "./components/InputAverageCostPerHour";
 import OutputActualCostsForMeeting from "./components/OutputActualCostsForMeeting";
 import Divider from "@material-ui/core/Divider";
+
 class App extends Component {
   calcActualCosts = (
     pNumAttendees,
@@ -83,10 +84,6 @@ class App extends Component {
     return (
       <div className="App">
         <MCCAppBar />
-        <p className="App-intro">
-          Want to know what it takes to hold a meeting?
-        </p>
-
         <InputNumberOfAttendees
           numAttendees={this.state.numAttendees}
           onChange={this.onChangeNumAttendees}
